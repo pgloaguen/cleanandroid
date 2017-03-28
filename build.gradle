@@ -1,0 +1,30 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'http://dl.bintray.com/jetbrains/intellij-plugin-service' }
+    }
+}
+
+plugins {
+    id "org.jetbrains.intellij" version "0.2.6"
+}
+
+apply plugin: "java"
+apply plugin: "idea"
+
+group 'com.pgloaguen'
+version '0.1-SNAPSHOT'
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+intellij {
+    pluginName "cleanAndroid"
+    intellij.updateSinceUntilBuild false
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
